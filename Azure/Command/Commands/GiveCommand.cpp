@@ -2,7 +2,7 @@
 #include "../../../Utils/Utils.h"
 #include "../../../SDK/Tag.h"
 
-GiveCommand::GiveCommand() : IMCCommand("give", "spawn items", "<itemName> <count> <itemData> <NBT>") {
+GiveCommand::GiveCommand() : IMCCommand("gamemode", "spawn items", "<itemName> <count> <itemData> <NBT>") {
 }
 
 GiveCommand::~GiveCommand() {
@@ -32,7 +32,7 @@ bool GiveCommand::execute(std::vector<std::string>* args) {
 		TextHolder tempText(args->at(1));
 		C_Item*** cStack = ItemRegistry::lookUpByName(ItemPtr, idk, tempText);
 		if (*cStack == nullptr) {
-			clientMessageF("%sInvalid item name!", RED);
+			clientMessageF("%sHmm... I couldn't find an item with that name.", RED);
 			return true;
 		}
 		yot = new C_ItemStack(***cStack, count, itemData);

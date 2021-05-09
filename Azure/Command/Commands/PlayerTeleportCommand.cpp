@@ -46,10 +46,10 @@ bool PlayerTeleportCommand::execute(std::vector<std::string>* args) {
 		break;
 	}
 	if (pos.iszero()) {
-		clientMessageF("[%sHorion%s] %sCouldn't find player: %s!", GOLD, WHITE, RED, nameOfPlayer.c_str());
+		clientMessageF("[%Azure Client%s] %sError: Couldn't find player: %s!", GOLD, WHITE, RED, nameOfPlayer.c_str());
 		return true;
 	}
 	g_Data.getLocalPlayer()->setPos(pos);
-	clientMessageF("[%sHorion%s] %sTeleported to %s", GOLD, WHITE, GREEN, playerName.c_str());
+	clientMessageF("[%Azure Client%s] %sTeleported to %s", GOLD, WHITE, GREEN, playerName.c_str());
 	return true;
 }

@@ -1,0 +1,2 @@
+language = "bash"
+run = "echo dont run this just "
